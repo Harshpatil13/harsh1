@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Harsh Patil - Portfolio, Education, Goals, Achievements" />
+  <meta name="author" content="Harsh Patil" />
+  <meta property="og:title" content="Harsh Patil Portfolio" />
+  <meta property="og:image" content="link-to-your-preview-image" />
+  <meta property="og:description" content="Personal introduction portfolio site." />
+  <meta name="theme-color" content="#ffffff" />
   <title>Harsh Patil - Portfolio</title>
+  <link rel="icon" href="favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -15,23 +23,94 @@
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-  <!-- Navbar -->
-  <header class="bg-gradient-to-r from-indigo-600 to-indigo-800 dark:from-indigo-800 dark:to-indigo-600 shadow sticky top-0 z-50">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-3xl text-white font-bold">Harsh Patil</h1>
-      <ul class="flex gap-6 text-sm text-white">
-        <li><a href="#welcome" class="hover:text-emerald-500">Welcome</a></li>
-        <li><a href="#about" class="hover:text-emerald-500">About</a></li>
-        <li><a href="#experience" class="hover:text-emerald-500">Experience</a></li>
-        <li><a href="#skills" class="hover:text-emerald-500">Skills</a></li>
-        <li><a href="#contact" class="hover:text-emerald-500">Contact</a></li>
-        <li><a href="#Send ME a Message" class="hover:text-emerald-500">Send ME a Message</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Welcome Section -->
+<!-- Navbar with Hamburger Menu -->
+<header class="bg-gradient-to-r from-indigo-600 to-indigo-800 dark:from-indigo-800 dark:to-indigo-600 shadow sticky top-0 z-50">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-3xl text-white font-bold">Harsh Patil</h1>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-white focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <ul id="nav-menu" class="hidden md:flex gap-6 text-sm text-white">
+      <li><a href="#welcome" class="hover:text-emerald-500">Welcome</a></li>
+      <li><a href="#about" class="hover:text-emerald-500">About</a></li>
+      <li><a href="#experience" class="hover:text-emerald-500">Experience</a></li>
+      <li><a href="#skills" class="hover:text-emerald-500">Skills</a></li>
+      <li><a href="#contact" class="hover:text-emerald-500">Contact</a></li>
+      <li><a href="#send-message" class="hover:text-emerald-500">Send Message</a></li>
+      <li>
+        <button id="theme-toggle" class="ml-4 px-2 py-1 border rounded text-sm text-white">Toggle Theme</button>
+      </li>
+    </ul>
+  </nav>
+  <ul id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 text-white bg-indigo-700">
+    <li><a href="#welcome" class="block py-2">Welcome</a></li>
+    <li><a href="#about" class="block py-2">About</a></li>
+    <li><a href="#experience" class="block py-2">Experience</a></li>
+    <li><a href="#skills" class="block py-2">Skills</a></li>
+    <li><a href="#contact" class="block py-2">Contact</a></li>
+    <li><a href="#send-message" class="block py-2">Send Message</a></li>
+  </ul>
+</header>
+
+<!-- Loading Spinner -->
+<div id="loading-spinner" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
+  <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
+</div>
+
+<!-- Your Main Content Here (Welcome, About, Experience, Skills, Contact, etc.) -->
+<!-- ... Existing Sections You Pasted Earlier ... -->
+
+<script>
+  // Hamburger menu toggle
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Theme Toggle
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+  });
+
+  // Scroll to top button
+  window.onscroll = function () {
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollBtn.classList.remove('hidden');
+    } else {
+      scrollBtn.classList.add('hidden');
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Simulated Loading
+  window.addEventListener('load', () => {
+    const spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 relative">
+
+<!-- Scroll to Top Button -->
+<button onclick="scrollToTop()" id="scrollTopBtn" class="fixed bottom-5 right-5 p-3 bg-indigo-600 text-white rounded-full shadow-lg hidden z-50">
+  ↑
+</button>
+
+
+ <!-- Welcome Section -->
   <section id="welcome" class="py-16 bg-gradient-to-r from-indigo-700 to-indigo-800 text-white text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl font-bold mb-4">Hello! I'm Harsh Patil 👋</h2>
@@ -246,3 +325,4 @@
 
 
 ::contentReference[oaicite:0]{index=0}
+
